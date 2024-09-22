@@ -4,9 +4,9 @@ import numpy as np
 
 # Set up GPIO
 # (check if the pinout is correct)
-GPIO.setmode(GPIO.BOARD)
+GPIO.setmode(GPIO.BCM)
 GPIO.setup(11, GPIO.OUT)    # Servo 1   
-servo1 = GPIO.PWM(11, 50)    # pin 11 for servo1 
+servo1 = GPIO.PWM(11, 50)    # pin 17 for servo1 
 
 servo1.start(0)
 
