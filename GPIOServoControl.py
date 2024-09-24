@@ -34,5 +34,3 @@ try:
     servo1.value = 0 # set to minimum position
     time.sleep(1)
 
-finally:
-   print("Cleaning up")
