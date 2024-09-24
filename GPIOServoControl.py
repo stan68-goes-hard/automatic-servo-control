@@ -1,29 +1,38 @@
-import RPi.GPIO as GPIO
+import gpiozero as GPIO
 import time
 import numpy as np
+from gpiozero import Servo as servo1
 
 # Set up GPIO
 # (check if the pinout is correct)
-GPIO.setmode(GPIO.BCM)
-GPIO.setup(11, GPIO.OUT)    # Servo 1   
-servo1 = GPIO.PWM(11, 50)    # pin 17 for servo1 
 
-servo1.start(0)
+servo1 = servo1(4) # set up servo on GPIO pin 4
 
 try:
-    servo1.ChangeDutyCycle(2)
+    servo1.min() # set to minimum position
     time.sleep(1)
-    servo1.ChangeDutyCycle(4)
+    servo1.mid() # set to middle position
     time.sleep(1)
-    servo1.ChangeDutyCycle(6)
+    servo1.max() # set to maximum position
     time.sleep(1)
-    servo1.ChangeDutyCycle(8)
+    servo1.value = 0 # set to minimum position
     time.sleep(1)
-    servo1.ChangeDutyCycle(10)
+    servo1.value = 0.5 # set to middle position
     time.sleep(1)
-    servo1.ChangeDutyCycle(12)
+    servo1.value = 1 # set to maximum position
+    time.sleep(1)
+    servo1.value = 0.5 # set to middle position
+    time.sleep(1)
+    servo1.value = 0 # set to minimum position
+    time.sleep(1)
+    servo1.value = -0.5     # set to middle position
+    time.sleep(1)
+    servo1.value = -1 # set to maximum position
+    time.sleep(1)
+    servo1.value = -0.5 # set to middle position
+    time.sleep(1)
+    servo1.value = 0 # set to minimum position
     time.sleep(1)
 
 finally:
-    servo1.stop()
-    GPIO.cleanup()
+   print("Cleaning up")
