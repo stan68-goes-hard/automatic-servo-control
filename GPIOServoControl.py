@@ -33,4 +33,12 @@ try:
     time.sleep(1)
     servo1.value = 0 # set to minimum position
     time.sleep(1)
-
+    
+finally:
+    servo1.close()
+    GPIO.cleanup()
+    print('GPIO cleanup completed')
+    print('Servo control test completed')
+    print('Press any key to exit')
+    if input() is True:
+    exit(0)
