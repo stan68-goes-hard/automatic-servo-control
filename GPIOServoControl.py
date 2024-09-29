@@ -1,44 +1,21 @@
-import gpiozero as GPIO
-import time
-import numpy as np
-from gpiozero import Servo as servo1
+from gpiozero import Servo
+from time import sleep
 
-# Set up GPIO
-# (check if the pinout is correct)
+servo = Servo(17)
 
-servo1 = servo1(4) # set up servo on GPIO pin 4
+correction=0.45
+maxPW=(2.0+correction)/1000
+minPW=(1.0-correction)/1000
 
-try:
-    servo1.min() # set to minimum position
-    time.sleep(1)
-    servo1.mid() # set to middle position
-    time.sleep(1)
-    servo1.max() # set to maximum position
-    time.sleep(1)
-    servo1.value = 0 # set to minimum position
-    time.sleep(1)
-    servo1.value = 0.5 # set to middle position
-    time.sleep(1)
-    servo1.value = 1 # set to maximum position
-    time.sleep(1)
-    servo1.value = 0.5 # set to middle position
-    time.sleep(1)
-    servo1.value = 0 # set to minimum position
-    time.sleep(1)
-    servo1.value = -0.5     # set to middle position
-    time.sleep(1)
-    servo1.value = -1 # set to maximum position
-    time.sleep(1)
-    servo1.value = -0.5 # set to middle position
-    time.sleep(1)
-    servo1.value = 0 # set to minimum position
-    time.sleep(1)
-    
-finally:
-    servo1.close()
-    GPIO.cleanup()
-    print('GPIO cleanup completed')
-    print('Servo control test completed')
-    print('Press any key to exit')
-    if input() is True:
-    exit(0)
+
+servo.mid()
+sleep(1)
+servo.min()
+sleep(1)
+servo.max()
+sleep(1)
+servo.mid()
+sleep(1)
+
+
+servo.close()
