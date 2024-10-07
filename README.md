@@ -1,3 +1,3 @@
 # automatic-servo-control
 
-Sets GPIO pinout and sets angle of the motors 
+Sets the GPIO pinout and sets angle of the motors 
