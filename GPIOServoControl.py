@@ -3,6 +3,20 @@ from time import sleep
 
 servo = Servo(17)
 
+# defining the PWM function dimensions for the servo
+# min_pulse_width = 1ms
+# max_pulse_width = 2ms
+# frame_width = 20ms
+# pulse_width = 1.5ms
+# active_high = True
+# initial_duty_cycle = 0
+# pin_factory = None
+# pin = 17
+# frequency = 50
+# initiial_value = 0
+# min_value = 0
+# max_value = 1
+
 
 def __PWM__(self, pin=17, frequency=50, initiial_value=0, min_value=0, max_value=1, 
             min_pulse_width=1/1000, max_pulse_width=2/1000, frame_width=20/1000,
