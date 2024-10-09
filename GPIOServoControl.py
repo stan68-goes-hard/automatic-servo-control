@@ -39,7 +39,8 @@ def __PWM__(self, pin=17, frequency=50, initiial_value=0, min_value=0, max_value
                 pin, frequency=int(1 / frame_width), pin_factory=pin_factory),
             pin_factory=pin_factory
         )
-    
+
+while True:
     # Set the servo to its minimum position
     servo.min()
     sleep(1)
