@@ -36,7 +36,7 @@ def __PWM__(self, pin=17, frequency=50, initiial_value=0, min_value=0, max_value
         self._value_range = 2
         super().__init__(
             pwm_device=PWMOutputDevice(
-                pin, frequency=int(1 / frame_width), pin_factory=pin_factory),
+                pin, frequency=int(1 / frame_width), pin_factory=pin_factory),                        #gotta find out the pin.factory settings
             pin_factory=pin_factory
         )
 
