@@ -52,3 +52,4 @@ def __PWM__(self, pin=17, frequency=50, initiial_value=0, min_value=0, max_value
 
     # Close the servo
 servo.close()
+exit(0)
